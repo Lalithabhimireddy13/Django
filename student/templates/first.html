@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align='center'><i>Student list</i></h1>
+    <u1>
+    <table border=5px bordercolor='black' align="center" >
+        <tr bgcolor='grey' align="center">
+            <td><b>first_name</b></td>
+            <td><b>last_name</b></td>
+            <td><b>email</b></td>
+            <td><b>gender</b></td>
+        </tr>
+        {% for i in students %}
+        <tr align ="center">
+            <td>{{i.first_name}}</td>
+            <td>{{i.last_name}}</td>
+            <td>{{i.email}}</td>
+            <td>{{i.gender}}</td>
+       </tr>
+        {% endfor %}
+        
+        
+            
+    </table>
+</u1>
+    <form id="adddataform" method="post" >
+        {% csrf_token %}
+        <label for="first_name">FIRST NAME:</lablel>
+            <input type="text" id="first_name" required><br> 
+        <label for="last_name">LAST NAME:</lablel>
+            <input type="text" id="last_name" required> <br>
+        <label for="email">EMAIL:</lablel>
+            <input type="email" id="email" required> <br>
+        <label for="gender">GENDER:</lablel>
+            <input type="text" id="gender" required><br>
+        <button type="submit">SUBMIT</button> </form>
+    </body>
+    </html>
